@@ -1,0 +1,106 @@
+
+body, h1, h2 {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+}
+
+.container {
+  text-align: center;
+  max-width: 800px;
+  width: 90%;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.group {
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.phonogram {
+  background-color: var(--group-color, #ffcc00);
+  border: 2px solid #333;
+  border-radius: 8px;
+  padding: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  position: relative;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.phonogram:active {
+  transform: scale(0.95);
+}
+
+.phonogram.flipped {
+  background-color: #333;
+  color: #fff;
+}
+
+.phonogram .examples {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 1rem;
+  padding: 10px;
+  overflow-wrap: break-word;
+  max-width: 90%;
+}
+
+.phonogram.flipped .examples {
+  display: block;
+}
+
+/* Group colors */
+.group[data-group="1"] .phonogram {
+  --group-color: #ffcc00;
+}
+.group[data-group="2"] .phonogram {
+  --group-color: #ff9999;
+}
+.group[data-group="3"] .phonogram {
+  --group-color: #99ccff;
+}
+.group[data-group="4"] .phonogram {
+  --group-color: #ccff99;
+}
+.group[data-group="5"] .phonogram {
+  --group-color: #ffcc99;
+}
+.group[data-group="6"] .phonogram {
+  --group-color: #ccccff;
+}
+.group[data-group="7"] .phonogram {
+  --group-color: #ff99cc;
+}
